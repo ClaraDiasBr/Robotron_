@@ -1,0 +1,39 @@
+{
+  "user_valido":{
+    "nome": "Hermione Granger",
+    "email": "hermione.granger@qa.com.br",
+    "password": "teste",
+    "administrador": "true"
+  },
+  "user_invalido":{
+    "nome": "Invalido tester",
+    "email": "fulano@qa.com",
+    "password": "teste",
+    "administrador": "true"
+  },
+  "user_sem_nome":{
+    "nome": "",
+    "email": "sem.nome@qa.com",
+    "password": "teste",
+    "administrador": "true"
+  },
+  "user_sem_senha":{
+    "nome": "Ian Something",
+    "email": "ians@qa.com.br",
+    "password": "",
+    "administrador": "true"
+  },
+  "user_sem_email":{
+    "nome": "Harry Potter",
+    "email": "",
+    "password": "teste",
+    "administrador": "true"
+  },
+  "user_nao_admin":{
+    "nome": "Jake the Dog",
+    "email": "jake.the.dog@qa.com",
+    "password": "teste",
+    "administrador": "false"
+  }
+
+}

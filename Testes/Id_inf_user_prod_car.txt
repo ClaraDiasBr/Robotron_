@@ -1,0 +1,25 @@
+"quantidade": 5,
+  "produtos": [
+        { "nome": "Logitech MX Vertical","preco": 470, "descricao": "Mouse", "quantidade": 382, "_id": "BeeJh5lz3k6kSIzA"},
+        { "nome": "MouseGamer", "preco": 100, "descricao": "Mouse", "quantidade": 550,  "_id": "IVmtt8nkfkvT7IBx"},
+        { "nome": "Samsung 60 polegadas", "preco": 5240, "descricao": "TV", "quantidade": 49977, "_id": "K6leHdftCeOJj8BJ"},
+        { "nome": "MouseGamerT", "preco": 100, "descricao": "Mouse", "quantidade": 550, "_id": "MULeWBJIdjdAjNSw"},
+        { "nome": "MouseTech", "preco": 100, "descricao": "Mouse", "quantidade": 550, "_id": "S06BaIGyVv7i2XCp"},
+        { "nome": "Processador", "preco": 100, "descricao": "i7", "quantidade": 550, "_id": "YFl8nqmP1C1WHce0"}
+    ]
+
+USERS:
+Response: [
+{'nome': 'Fulano da Silva', 'email': 'fulano@qa.com', 'password': 'teste', 'administrador': 'true', '_id': '0uxuPY0cbmQhpEz1'}, 
+{'nome': 'tony stark', 'email': 'tony.stark@gmail.com', 'password': 'test123', 'administrador': 'true', '_id': '9Ma0mdfiQO8Gd3st'}, 
+{'nome': 'jubas5 priest', 'email': 'testenul5@exemplo.com', 'password': '123', 'administrador': 'true', '_id': '9vgMz6UO2VyyLbtk'}, 
+{'nome': 'jubas6 priest', 'email': 'testenul6@exemplo.com', 'password': '123', 'administrador': 'true', '_id': 'CVtOifLfJfYXpZ50'}, 
+{'nome': '5 priest', 'email': 'testeiuq5@exemplo.com', 'password': '123', 'administrador': 'true', '_id': 'YDwgzPU8CnGu5yzN'}
+{'nome': 'Jake the Dog', 'email': 'jake.the.dog@qa.com', 'password': 'teste', 'administrador': 'false', '_id': 'AqoX7CPy3kJbx1vl'}
+{'nome': 'Jake the DogS', 'email': 'jake.the.doSg@qa.com', 'password': 'teste', 'administrador': 'false', '_id': '39OGwZ46ZdsHfqbc'}
+{'nome': 'Valido tester', 'email': 'fulano@qa.com.br', 'password': 'teste', 'administrador': 'true', '_id': 'FwgIw7mrb7PET19M'}]
+
+CARRINHOS:
+"_id": "7XWVORaVHOBBMoDP"
+"_id": "qbMqntef4iTOwWfg"
+rf0Sd8n6613y7FEw
