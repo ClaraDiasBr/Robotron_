@@ -32,11 +32,13 @@ Falta implementar:
         Cenario Triste DELETE user id
         Cenario Triste PUT user id
         Cenario Feliz PUT user id Status Code 201
+        Cenario Triste POST email utilizado --OK
+
 
     - Produto:
-        Falta cenario DELETE para o Status Code 403
-        Falta cenario com o PUT
-        Cenario Triste GET Produtos Id
+        Falta cenario DELETE para o Status Code 403 --OK
+        Falta cenario com o PUT --OK
+        Cenario Triste GET Produtos Id --OK
 
 
     * Automatizar os dados;

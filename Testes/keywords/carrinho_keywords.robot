@@ -1,6 +1,6 @@
 * Settings *
 Documentation       Keywords e Variaveis para ações do endpoint /carrinhos
-Resource            ./common.robot
+Resource            ../support/base.robot
 
 #Sessão para setar variáveis para utilização
 * Variables *

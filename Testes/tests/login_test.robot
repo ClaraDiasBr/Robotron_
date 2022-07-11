@@ -1,8 +1,7 @@
 #Sessão para configuração, documemtação, imports de arquivos e library
 * Settings *
-Documentation   Arquivo simples para requisições HTTP em APIs REST
-Library         RequestsLibrary
-Resource        keywords/login_keywords.robot
+Documentation   Arquivo de Testes para o Endpoint /login
+Resource            ../keywords/login_keywords.robot
 
 #Sessão para criação dos cenários de teste
 * Test Cases *
