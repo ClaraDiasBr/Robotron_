@@ -15,11 +15,6 @@ GET Endpoint /carrinhos ID
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
-Criar Carrinho Valido
-    ${produtos}             Importar JSON Estatico  json_carrinho.json
-    ${payload}              Set Variable     ${produtos}
-    Set Global Variable     ${payload}
-
 POST Endpoint /carrinhos
     [Arguments]             ${token_auth}=${login_response.json()["authorization"]}
     &{header}               Create Dictionary     Authorization=${token_auth}  Content-Type=application/json
@@ -40,3 +35,8 @@ DELETE Endpoint /carrinhos/cancelar-compra
     ${response}             DELETE On Session       serverest       /carrinhos/cancelar-compra     headers=${header}     expected_status=any
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
+
+Criar Carrinho Valido
+    ${produtos}             Importar JSON Estatico  json_carrinho.json
+    ${payload}              Set Variable     ${produtos}
+    Set Global Variable     ${payload}

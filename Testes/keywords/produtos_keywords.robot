@@ -2,14 +2,6 @@
 Documentation       Keywords e Variaveis para ações do endpoint /produtos
 Resource            ../support/base.robot
 
-*Variables*
-
-#${id_produto_inv}    YFl8nqmP1C1WHce0
-# ${inv_token_auth}         YJHAJSKjaf879
-#${id_produto}             BeeJh5lz3k6kSIzA
-${id_produto_MESMO_NOME}  dGqTkMUkFoThbk1h
-
-
 * Keywords *
 GET Endpoint /produtos
     ${response}             GET On Session      serverest       /produtos
@@ -42,22 +34,6 @@ PUT Endpoint /produtos
     ${response}             PUT On Session      serverest       /produtos/${id_produto}      json=${payload}  headers=${header}   expected_status=any
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
-
-PUT Mesmo Nome Endpoint /produtos
-    &{header}               Create Dictionary     Authorization=${token_auth}   
-    ${response}             PUT On Session      serverest       /produtos/${id_produto_MESMO_NOME}      json=${payload}  headers=${header}   expected_status=any
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
-
-PUT TOKEN Ausente Endpoint /produtos
-    &{header}               Create Dictionary     Authorization=${inv_token_auth}   
-    ${response}             PUT On Session      serverest       /produtos/${id_produto}      json=${payload}  headers=${header}   expected_status=any
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
-
-Cadastrar Produto Dinamico Valido
-    ${payload}             Criar Dados Dinamicos Produto Valido
-    Set Global Variable    ${payload}
 
 Editar Produto
     ${payload}              Create Dictionary     nome=SuperTecladoGamer    preco=150   descricao=Teclado     quantidade=550 

@@ -26,7 +26,7 @@ Cenario: POST Cadastrar Produto Dinanmico 201
     [tags]   POST   POSTPRODUTODINAMICO
     POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer login e Armazenar Token
-    Cadastrar Produto Dinamico Valido
+    Criar Produto Dinamicos Valido
     POST Endpoint /produtos
     Validar Status Code "201"
 
@@ -34,7 +34,7 @@ Cenario: POST Cadastrar o Mesmo Produto 400
     [tags]   POST    POSTMESMOPRODUTO
     POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer login e Armazenar Token
-    Cadastrar Produto Dinamico Valido
+    Criar Produto Dinamicos Valido
     POST Endpoint /produtos
     POST Endpoint /produtos
     Validar Status Code "400"
@@ -43,7 +43,7 @@ Cenario: POST Cadastrar Produto Token Ausente 401
     [tags]   POST    POSTAUSENTE
     POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer login e Armazenar Token
-    Cadastrar Produto Dinamico Valido
+    Criar Produto Dinamicos Valido
     POST Endpoint /produtos      ${inv_token_auth}
     Validar Status Code "401"
 
@@ -51,7 +51,7 @@ Cenario: POST Cadastrar Produto Nao Admin 403
     [tags]   POST     POSTPRODUTONADMIN
     POST Endpoint /login  ${email_nao_admin}   ${password_nao_admin}
     Fazer login e Armazenar Token
-    Cadastrar Produto Dinamico Valido
+    Criar Produto Dinamicos Valido
     POST Endpoint /produtos
     Validar Status Code "403"
 
@@ -59,7 +59,7 @@ Cenario: DELETE Excluir Produto ID 200
     [tags]    DELETE        DELETEPROD
     POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer Login e Armazenar Token
-    Cadastrar Produto Dinamico Valido
+    Criar Produto Dinamicos Valido
     POST Endpoint /produtos
     DELETE Endpoint /produtos   
     Validar Status Code "200"
@@ -89,7 +89,7 @@ Cenario: PUT Editar Produto 200
     [tags]  PUT   PUTPROD
     POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer Login e Armazenar Token
-    Cadastrar Produto Dinamico Valido
+    Criar Produto Dinamicos Valido
     PUT Endpoint /produtos  ${id_produto_editavel}
     Validar Status Code "200"
 
@@ -97,7 +97,7 @@ Cenario: PUT Editar Produto Mesmo Nome 400
     [tags]   PUT  PUTNOMEXISTENTE
     POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer Login e Armazenar Token
-    Cadastrar Produto Dinamico Valido
+    Criar Produto Dinamicos Valido
     POST Endpoint /produtos
     PUT Endpoint /produtos  ${id_produto_editavel}
     Validar Status Code "400"

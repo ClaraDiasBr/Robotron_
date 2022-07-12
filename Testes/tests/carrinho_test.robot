@@ -23,7 +23,7 @@ Cenario: GET Buscar Carrinho ID Invalido 400
 
 Cenario: POST Cadastrar Carrinho 201
     [tags]   POST     POSTCADCARRINHO
-    Cadastrar Usuario Dinamico Valido
+    Criar Dados Dinamicos Usuario Valido
     POST Endpoint /usuarios
     GET Endpoint /usuarios ID
     POST Endpoint /login
@@ -50,7 +50,7 @@ Cenario: POST Cadastrar Carrinho Token Ausente 401
 
 Cenario: DELETE Concluir Compra 200
     [tags]    DELETE      CONCLUIRCOMPRA
-    Cadastrar Usuario Dinamico Valido
+    Criar Dados Dinamicos Usuario Valido
     POST Endpoint /usuarios
     GET Endpoint /usuarios ID
     POST Endpoint /login
@@ -62,7 +62,7 @@ Cenario: DELETE Concluir Compra 200
 
 Cenario: DELETE ERRO Concluir Compra 401
     [tags]    DELETE      ERROCONCLUIRCOMPRA
-    Cadastrar Usuario Dinamico Valido
+    Criar Dados Dinamicos Usuario Valido
     POST Endpoint /usuarios
     GET Endpoint /usuarios ID
     POST Endpoint /login
@@ -74,7 +74,7 @@ Cenario: DELETE ERRO Concluir Compra 401
 
 Cenario: DELETE Excluir Carrinho 200
     [tags]    DELETE     EXCLUIRCAR
-    Cadastrar Usuario Dinamico Valido
+    Criar Dados Dinamicos Usuario Valido
     POST Endpoint /usuarios
     GET Endpoint /usuarios ID
     POST Endpoint /login
@@ -86,7 +86,7 @@ Cenario: DELETE Excluir Carrinho 200
 
 Cenario: DELETE ERRO Excluir Carrinho 200
     [tags]    DELETE     ERROEXCLUIRCAR
-    Cadastrar Usuario Dinamico Valido
+    Criar Dados Dinamicos Usuario Valido
     POST Endpoint /usuarios
     GET Endpoint /usuarios ID
     POST Endpoint /login
