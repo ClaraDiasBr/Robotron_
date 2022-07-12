@@ -8,20 +8,31 @@ Suite Setup         Criar Sessao
 * Test Cases *
 # Cenario Produtos
 Cenario: GET Listar Produtos 200
-    [tags]  GETALL
-    Fazer login e Armazenar Token
+    [tags]  GET     GETALL
     GET Endpoint /produtos
     Validar Status Code "200"
 
+Cenario: GET Produtos Id 200
+    [tags]  GET     GETPRODUTOID
+    GET ID Endpoint /produtos     ${id_produto}
+    Validar Status Code "200"
+
+Cenario: GET Produtos Id Nao Encontrado 400
+    [tags]   GET     GETPRODUTOEXC
+    GET ID Endpoint /produtos     ${id_produto_inv}
+    Validar Status Code "400"
+
 Cenario: POST Cadastrar Produto Dinanmico 201
-    [tags]      POSTPRODUTODINAMICO
+    [tags]   POST   POSTPRODUTODINAMICO
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer login e Armazenar Token
     Cadastrar Produto Dinamico Valido
     POST Endpoint /produtos
     Validar Status Code "201"
 
 Cenario: POST Cadastrar o Mesmo Produto 400
-    [tags]      POSTMESMOPRODUTO
+    [tags]   POST    POSTMESMOPRODUTO
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer login e Armazenar Token
     Cadastrar Produto Dinamico Valido
     POST Endpoint /produtos
@@ -29,81 +40,80 @@ Cenario: POST Cadastrar o Mesmo Produto 400
     Validar Status Code "400"
 
 Cenario: POST Cadastrar Produto Token Ausente 401
-    [tags]     POSTAUSENTE
+    [tags]   POST    POSTAUSENTE
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer login e Armazenar Token
     Cadastrar Produto Dinamico Valido
-    POST Token Ausente Endpoint /produtos
+    POST Endpoint /produtos      ${inv_token_auth}
     Validar Status Code "401"
 
 Cenario: POST Cadastrar Produto Nao Admin 403
-    [tags]      POSTPRODUTONADMIN
-    Fazer login Nao Admin e Armazenar Token
+    [tags]   POST     POSTPRODUTONADMIN
+    POST Endpoint /login  ${email_nao_admin}   ${password_nao_admin}
+    Fazer login e Armazenar Token
     Cadastrar Produto Dinamico Valido
     POST Endpoint /produtos
     Validar Status Code "403"
 
-Cenario: GET Produtos Id 200
-    [tags]  GETPRODUTOID
-    GET ID Endpoint /produtos
-    Validar Status Code "200"
-
-Cenario: GET Produtos Id Nao Encontrado 400
-    [tags]  GETPRODUTOEXC
-    GET ID Produto Nao Encontrado Endpoint /produtos
-    Validar Status Code "400"
-
 Cenario: DELETE Excluir Produto ID 200
-    [tags]  DELETEPROD
+    [tags]    DELETE        DELETEPROD
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer Login e Armazenar Token
     Cadastrar Produto Dinamico Valido
     POST Endpoint /produtos
-    Validar Ter Criado Produto
-    Buscar Id do Produto e Armazenar
-    DELETE Endpoint /produtos
+    DELETE Endpoint /produtos   
     Validar Status Code "200"
 
 Cenario: DELETE Excluir Produto ID Faz parte CARRINHO 400
-    [tags]  DELETEPRODCARRINHO
+    [tags]    DELETE       DELETEPRODCARRINHO
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer Login e Armazenar Token
-    DELETE Endpoint /produtos
+    DELETE Endpoint /produtos  ${id_produto}
     Validar Status Code "400"
 
 Cenario: DELETE Excluir Produto Rota do ADMIN para o Status Code 403
-    [tags]  DELETEP403
-    Fazer login Nao Admin e Armazenar Token
-    DELETE Endpoint /produtos
+    [tags]   DELETE        DELETEP403
+    POST Endpoint /login  ${email_nao_admin}   ${password_nao_admin}
+    Fazer login e Armazenar Token
+    DELETE Endpoint /produtos    ${id_produto}
     Validar Status Code "403"
     
 Cenario: DELETE Excluir Produto ID Token Ausente 401
-    [tags]  DELETEPRODSEMTOKEN
-    Fazer Login e Armazenar Token
-    DELETE Token Ausente Endpoint /produtos
+    [tags]   DELETE      DELETEPRODSEMTOKEN
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
+    Fazer Login e Armazenar Token    
+    DELETE Endpoint /produtos  ${id_produto}    ${inv_token_auth}
     Validar Status Code "401"
 
 Cenario: PUT Editar Produto 200
-    [tags]  PUTPROD
-    Fazer login e Armazenar Token
-    Editar Produto
-    PUT Endpoint /produtos
+    [tags]  PUT   PUTPROD
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
+    Fazer Login e Armazenar Token
+    Cadastrar Produto Dinamico Valido
+    PUT Endpoint /produtos  ${id_produto_editavel}
     Validar Status Code "200"
 
 Cenario: PUT Editar Produto Mesmo Nome 400
-    [tags]  PUTNOMEXISTENTE
-    Fazer login e Armazenar Token
-    Editar Produto
-    PUT Mesmo Nome Endpoint /produtos
+    [tags]   PUT  PUTNOMEXISTENTE
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
+    Fazer Login e Armazenar Token
+    Cadastrar Produto Dinamico Valido
+    POST Endpoint /produtos
+    PUT Endpoint /produtos  ${id_produto_editavel}
     Validar Status Code "400"
 
 Cenario: PUT Editar Produto TOKEN Ausente 401
-    [tags]  PUTTOKENAUSENTE
-    Fazer login e Armazenar Token
+    [tags]  PUT  PUTTOKENAUSENTE
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
+    Fazer Login e Armazenar Token
     Editar Produto
-    PUT TOKEN Ausente Endpoint /produtos
+    PUT Endpoint /produtos  ${id_produto_editavel}    ${inv_token_auth}
     Validar Status Code "401"
 
 Cenario: PUT Editar Produto NAO Admin 403
-    [tags]  PUTNAOADMIN
-    Fazer login Nao Admin e Armazenar Token
+    [tags]  PUT   PUTNAOADMIN
+    POST Endpoint /login  ${email_nao_admin}   ${password_nao_admin}
+    Fazer login e Armazenar Token
     Editar Produto
-    PUT Endpoint /produtos
+    PUT Endpoint /produtos  ${id_produto_editavel}
     Validar Status Code "403"

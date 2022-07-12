@@ -9,11 +9,11 @@ Suite Setup         Criar Sessao
 # Cenario Login
 
 Cenario: POST Realizar Login 200
-    [tags]      POSTLOGIN
-    POST Endpoint /login
-    Validar Status Code "200"
+    [tags]  POST     POSTLOGIN
+    POST Endpoint /login  ${email_para_login}   ${password_para_login}
+    Validar Status Code Login "200"
 
 Cenario: POST Realizar Login Sem Email 400
-    [tags]     POSTSEMEMAIL
-    POST Sem Email Endpoint /login
-    Validar Status Code "400"
+    [tags]  POST     POSTSEMEMAIL
+    POST Endpoint /login  ${email_vazio}   ${password_para_login}
+    Validar Status Code Login "400"

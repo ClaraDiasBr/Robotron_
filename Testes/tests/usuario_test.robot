@@ -8,88 +8,92 @@ Suite Setup         Criar Sessao
 * Test Cases *
 #Cenario Usuarios
 Cenario: GET Todos os Usuarios 200
-    [tags]      GET
+    [tags]   GET     GETALL
     GET Endpoint /usuarios
     Validar Status Code "200"
-    #Validar Quantidade "${9}"
     Printar Conteudo Response
 
 Cenario: GET Buscar Usuario por ID
-    [tags]  GETUSERID
-    Buscar Usuario por ID
+    [tags]  GET       GETUSERID
+    Cadastrar Usuario Dinamico Valido
+    POST Endpoint /usuarios
+    GET Endpoint /usuarios ID
     Validar Status Code "200"
 
 Cenario: GET Buscar Usuario Nao Cadastrado por ID
-    [tags]  GETUSERIDNAOCADASTRADO
-    Buscar Usuario Nao Cadastrado por ID
+    [tags]  GET        GETUSERIDNAOCADASTRADO
+    GET Endpoint /usuarios ID    ${id_invalido}
     Validar Status Code "400"
 
 Cenario: POST Cadastrar Usuario Dinamico 201
-    [tags]      POSTDINAMICO
+    [tags]   POST     POSTDINAMICO
     Cadastrar Usuario Dinamico Valido
     POST Endpoint /usuarios
     Validar Status Code "201"
     Validar Se Mensagem Contem "sucesso"
 
 Cenario: POST Cadastrar Usuario Email Utilizado 400
-    [tags]  POSTMESMOEMAIL
-    # Criar Usuario Email Utilizado
+    [tags]  POST       POSTMESMOEMAIL
     Cadastrar Usuario Dinamico Valido
     POST Endpoint /usuarios
     POST Endpoint /usuarios
     Validar Status Code "400"
 
 Cenario: POST Criar Usuario Sem nome 400
-    [tags]  POSTCRIARUSERSEMNOME
+    [tags]  POST         POSTCRIARUSERSEMNOME
     Criar Usuario Estatico Sem Nome
     POST Endpoint /usuarios
     Validar Status Code "400"
 
 Cenario: POST Criar Usuario Sem Senha 400
-    [tags]  POSTCRIARUSERSEMSENHA
+    [tags]  POST            POSTCRIARUSERSEMSENHA
     Criar Usuario Estatico Sem Senha
     POST Endpoint /usuarios
     Validar Status Code "400"
 
 Cenario: POST Criar Usuario Sem Email 400
-    [tags]  POSTCRIARUSERSEMEMAIL
+    [tags]  POST            POSTCRIARUSERSEMEMAIL
     Criar Usuario Estatico Sem Email
     POST Endpoint /usuarios
     Validar Status Code "400"
 
 Cenario: POST User NAO Admin
-    [tags]  POSTUSERNAOADMIN
-    Criar Usuario Estatico Nao Admin
+    [tags]  POST             POSTUSERNAOADMIN
+    Cadastrar Usuario Dinamico Nao ADMIN Valido
     POST Endpoint /usuarios
     Validar Status Code "201"
 
 Cenario: DELETE Usuario 200
-    [tags]      DELETE
+    [tags]  DELETE     DELETEUSER
     Cadastrar Usuario Dinamico Valido
     POST Endpoint /usuarios
-    Buscar Id do Usuario e Armazenar
     DELETE Endpoint /usuarios
     Validar Status Code "200"
 
 Cenario: DELETE Usuario com Carrinho 400
-    [tags]      DELETECOMCARRINHO
-    DELETE com Carrinho Endpoint /usuarios
+    [tags]  DELETE     DELETECOMCARRINHO
+    DELETE Endpoint /usuarios  ${id_user_carrinho}
     Validar Status Code "400"
 
 Cenario: PUT Editar Usuario 200
-    [tags]      PUT
+    [tags]   PUT     PUTUSER
+    Cadastrar Usuario Dinamico Valido
+    POST Endpoint /usuarios
+    Cadastrar Usuario Dinamico Valido
     PUT Endpoint /usuarios
     Validar Status Code "200"
 
 Cenario: PUT Editar Usuario Nao Cadastrado 201
-    [tags]      PUTNEWUSER
+    [tags]   PUT     PUTNEWUSER
     Cadastrar Usuario Dinamico Valido
-    PUT Novo Usuario Endpoint /usuarios
+    PUT Endpoint /usuarios   ${id_invalido}
     Validar Status Code "201"
 
 Cenario: PUT Editar Usuario Email Utilizado 400
-    [tags]      PUTEMAIL
-    PUT Email Utilizado Endpoint /usuarios
+    [tags]   PUT    PUTEMAIL
+    Cadastrar Usuario Dinamico Valido
+    POST Endpoint /usuarios
+    PUT Endpoint /usuarios    ${id_invalido}
     Validar Status Code "400"
 
 

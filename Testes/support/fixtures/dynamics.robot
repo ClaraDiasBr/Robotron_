@@ -10,6 +10,13 @@ Criar Dados Dinamicos Usuario Valido
     Log to Console  ${payload}
     [return]        ${payload}
 
+Criar Dados Dinamicos Usuario Nao ADMIN Valido
+    ${nome}         FakerLibrary.Name
+    ${email}        FakerLibrary.Email
+    ${payload}      Create Dictionary            nome=${nome}    email=${email}    password=senha123        administrador=false     
+    Log to Console  ${payload}
+    [return]        ${payload}
+
 Criar Dados Dinamicos Produto Valido
     ${nome_produto}         FakerLibrary.Text           max_nb_chars=5
     ${preco_produto}        FakerLibrary.Random Number  digits= 4
