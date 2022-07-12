@@ -37,29 +37,25 @@ https://github.com/ClaraDiasBr/Robotron_6_Maria_Dias_Compass.git
 ## Executando os Testes
 - Abra o terminal na pasta 'tests'
 
-Testes por Endpoint
+### Testes por Endpoint:
     Login     Executa todos os testes do Endpoint /login
-    ```shell
         robot -d ./reports  login_test.robot
-    ```
+    
     Usuários     Executa todos os testes do Endpoint /usuarios
-    ```shell
         robot -d ./reports  usuario_test.robot
-    ```
+    
     Produtos     Executa todos os testes do Endpoint /produtos
-    ```shell
         robot -d ./reports  produto_test.robot
-    ```
+    
     Carrinhos     Executa todos os testes do Endpoint /carrinhos
-    ```shell
         robot -d ./reports  carrinho_test.robot
-    ```
+    
 Suites de Testes
     ```shell
         robot -d ./reports  suite_test.robot
     ```
 
-Testes Por Tags
+### Testes Por Tags
 - Executar no terminal: `robot -d ./reports -i "tag"  "arquivo_de_teste"`
     Substituir "arquivo_de_teste" pelo arquivo desejado.
     Substituir "tag" pela Tag desejada.
@@ -80,6 +76,6 @@ Testes Por Tags
 - Entrar na pasta *reports* e acessar o arquivo *log.html*
 
 
-## Autora
+### Autora
 Maria Clara Dias
 
