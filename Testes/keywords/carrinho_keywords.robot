@@ -26,18 +26,18 @@ Criar Carrinho Valido
 POST Endpoint /carrinhos
     Criar Carrinho Valido
     &{header}               Create Dictionary     Authorization=${token_auth}  Content-Type=application/json
-    ${response}             POST On Session       serverest       /carrinhos      json=${payload}    headers=${header}   
+    ${response}             POST On Session       serverest       /carrinhos      json=${payload}    headers=${header}    expected_status=any
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
 DELETE Endpoint /carrinhos/concluir-compra
     &{header}               Create Dictionary     Authorization=${token_auth}  Content-Type=application/json
-    ${response}             DELETE On Session       serverest       /carrinhos/concluir-compra     headers=${header}
+    ${response}             DELETE On Session       serverest       /carrinhos/concluir-compra     headers=${header}     expected_status=any
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
 DELETE Endpoint /carrinhos/cancelar-compra
     &{header}               Create Dictionary     Authorization=${token_auth}  Content-Type=application/json
-    ${response}             DELETE On Session       serverest       /carrinhos/cancelar-compra     headers=${header}
+    ${response}             DELETE On Session       serverest       /carrinhos/cancelar-compra     headers=${header}     expected_status=any
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}

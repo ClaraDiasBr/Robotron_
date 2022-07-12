@@ -1,111 +1,109 @@
 #Sessão para configuração, documemtação, imports de arquivos e library
 * Settings *
-Documentation   Arquivo de Testes para o Endpoint /produtos
+Documentation       Arquivo de Testes para o Endpoint /produtos
 Resource            ../keywords/produtos_keywords.robot
+Suite Setup         Criar Sessao
 
 #Sessão para criação dos cenários de teste
 * Test Cases *
 # Cenario Produtos
 Cenario: GET Listar Produtos 200
     [tags]  GETALL
-    Criar Sessao
     Fazer login e Armazenar Token
     GET Endpoint /produtos
     Validar Status Code "200"
 
-Cenario: POST Cadastrar Produto 201
-    [tags]      POSTPRODUTO
-    Criar Sessao
+Cenario: POST Cadastrar Produto Dinanmico 201
+    [tags]      POSTPRODUTODINAMICO
     Fazer login e Armazenar Token
+    Cadastrar Produto Dinamico Valido
     POST Endpoint /produtos
     Validar Status Code "201"
 
 Cenario: POST Cadastrar o Mesmo Produto 400
     [tags]      POSTMESMOPRODUTO
-    Criar Sessao
     Fazer login e Armazenar Token
-    POST ja Cadastrado Endpoint /produtos
+    Cadastrar Produto Dinamico Valido
+    POST Endpoint /produtos
+    POST Endpoint /produtos
     Validar Status Code "400"
 
 Cenario: POST Cadastrar Produto Token Ausente 401
     [tags]     POSTAUSENTE
-    Criar Sessao
     Fazer login e Armazenar Token
+    Cadastrar Produto Dinamico Valido
     POST Token Ausente Endpoint /produtos
     Validar Status Code "401"
 
 Cenario: POST Cadastrar Produto Nao Admin 403
     [tags]      POSTPRODUTONADMIN
-    Criar Sessao
     Fazer login Nao Admin e Armazenar Token
-    POST User Nao Admin Endpoint /produtos
+    Cadastrar Produto Dinamico Valido
+    POST Endpoint /produtos
     Validar Status Code "403"
 
 Cenario: GET Produtos Id 200
     [tags]  GETPRODUTOID
-    Criar Sessao
     GET ID Endpoint /produtos
     Validar Status Code "200"
 
 Cenario: GET Produtos Id Nao Encontrado 400
     [tags]  GETPRODUTOEXC
-    Criar Sessao
     GET ID Produto Nao Encontrado Endpoint /produtos
     Validar Status Code "400"
 
 Cenario: DELETE Excluir Produto ID 200
-    [tags]  DELETEPRODUTO
-    Criar Sessao
+    [tags]  DELETEPROD
     Fazer Login e Armazenar Token
-    Criar Produto e Armazenar ID
+    Cadastrar Produto Dinamico Valido
+    POST Endpoint /produtos
+    Validar Ter Criado Produto
+    Buscar Id do Produto e Armazenar
     DELETE Endpoint /produtos
     Validar Status Code "200"
 
 Cenario: DELETE Excluir Produto ID Faz parte CARRINHO 400
     [tags]  DELETEPRODCARRINHO
-    Criar Sessao
     Fazer Login e Armazenar Token
-    DELETE Faz Parte Carrinho Endpoint /produtos
+    DELETE Endpoint /produtos
     Validar Status Code "400"
 
+Cenario: DELETE Excluir Produto Rota do ADMIN para o Status Code 403
+    [tags]  DELETEP403
+    Fazer login Nao Admin e Armazenar Token
+    DELETE Endpoint /produtos
+    Validar Status Code "403"
+    
 Cenario: DELETE Excluir Produto ID Token Ausente 401
     [tags]  DELETEPRODSEMTOKEN
-    Criar Sessao
     Fazer Login e Armazenar Token
     DELETE Token Ausente Endpoint /produtos
     Validar Status Code "401"
 
-Cenario: DELETE Excluir Produto Rota do ADMIN para o Status Code 403
-    [tags]  DELETEP403
-    Criar Sessao
-    Fazer login Nao Admin e Armazenar Token
-    DELETE ROTA 403 Endpoint /produtos
-    Validar Status Code "403"
-
 Cenario: PUT Editar Produto 200
     [tags]  PUTPROD
-    Criar Sessao
     Fazer login e Armazenar Token
+    Editar Produto
     PUT Endpoint /produtos
     Validar Status Code "200"
 
 Cenario: PUT Editar Produto Mesmo Nome 400
     [tags]  PUTNOMEXISTENTE
-    Criar Sessao
     Fazer login e Armazenar Token
+    Editar Produto
     PUT Mesmo Nome Endpoint /produtos
     Validar Status Code "400"
 
 Cenario: PUT Editar Produto TOKEN Ausente 401
     [tags]  PUTTOKENAUSENTE
-    Criar Sessao
     Fazer login e Armazenar Token
+    Editar Produto
     PUT TOKEN Ausente Endpoint /produtos
     Validar Status Code "401"
 
 Cenario: PUT Editar Produto NAO Admin 403
     [tags]  PUTNAOADMIN
-    Criar Sessao
     Fazer login Nao Admin e Armazenar Token
-    PUT NAO ADMIN Endpoint /produtos
+    Editar Produto
+    PUT Endpoint /produtos
     Validar Status Code "403"
