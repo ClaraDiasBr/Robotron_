@@ -2,7 +2,6 @@
 
 # API ServeRest: Testes Automatizados com Robot Framework
 
-# Sobre o Projeto
 ## Ferramentas
 - Visual Studio Code
 - Robot Framework
