@@ -10,6 +10,7 @@ Suite Setup         Criar Sessao
 Cenario: GET Todos os Usuarios 200
     [tags]   GET     GETALL
     GET Endpoint /usuarios
+    Quantidade Usuarios Cadastrados
     Validar Status Code "200"
 
 Cenario: GET Buscar Usuario por ID

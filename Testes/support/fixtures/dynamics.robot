@@ -1,20 +1,19 @@
 * Settings *
 Documentation       Keywords e Variaveis para geração de dados dinâmicos
 Library             FakerLibrary
+Library             ../python_functions/python_functions.py
 
 * Keywords *
 Criar Dados Dinamicos Usuario Valido
-    ${nome}         FakerLibrary.Name
-    ${email}        FakerLibrary.Email
-    ${payload}      Create Dictionary            nome=${nome}    email=${email}    password=senha123        administrador=true     
-    Log to Console  ${payload}
+    ${payload}        Criar Dados Dinamicos Usuario Admin Ou Nao    admin=true
+    Log to Console         ${payload}
     Set Global Variable    ${payload}
 
 Criar Dados Dinamicos Usuario Nao ADMIN Valido
     ${nome}         FakerLibrary.Name
     ${email}        FakerLibrary.Email
     ${payload}      Create Dictionary            nome=${nome}    email=${email}    password=senha123        administrador=false     
-    Log to Console  ${payload}
+    Log to Console         ${payload}
     Set Global Variable    ${payload}
 
 Criar Produto Dinamicos Valido

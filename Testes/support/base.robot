@@ -6,6 +6,7 @@ Library             RequestsLibrary
 Library             Collections
 Resource            ./common/common.robot
 Resource            ./fixtures/dynamics.robot
+Library             ./python_functions/python_functions.py
 Resource            ./variaveis/serverest_variaveis.robot
 Resource            ../keywords/carrinho_keywords.robot
 Resource            ../keywords/login_keywords.robot

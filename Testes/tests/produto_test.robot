@@ -10,6 +10,7 @@ Suite Setup         Criar Sessao
 Cenario: GET Listar Produtos 200
     [tags]  GET     GETALL
     GET Endpoint /produtos
+    Quantidade Produtos Cadastrados
     Validar Status Code "200"
 
 Cenario: GET Produtos Id 200

@@ -5,7 +5,6 @@ Resource            ../support/base.robot
 * Keywords *
 GET Endpoint /produtos
     ${response}             GET On Session      serverest       /produtos
-    Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
 GET ID Endpoint /produtos
@@ -42,8 +41,7 @@ Editar Produto
 Validar Ter Criado Produto
     Should be Equal         ${response.json()["message"]}               Cadastro realizado com sucesso
     Should Not Be Empty     ${response.json()["_id"]} 
-    
-Buscar Id do Produto e Armazenar
-   ${id_produto}             Set Variable        ${response.json()["_id"]}
-   Log to Console          Response: ${id_produto}
-   Set Global Variable     ${id_produto}
+
+Quantidade Produtos Cadastrados
+    ${quantidade_produtos}      Buscar Quantidade Produtos Cadastrados
+    Log to Console              Response: ${quantidade_produtos}
