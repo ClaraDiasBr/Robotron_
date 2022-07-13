@@ -23,7 +23,7 @@ Cenario: GET Produtos Id Nao Encontrado 400
     GET ID Endpoint /produtos     ${id_produto_inv}
     Validar Status Code "400"
 
-Cenario: POST Cadastrar Produto Dinanmico 201
+Cenario: POST Cadastrar Produto Dinamico 201
     [tags]   POST   POSTPRODUTODINAMICO
     POST Endpoint /login  ${email_para_login}   ${password_para_login}
     Fazer login e Armazenar Token

@@ -8,7 +8,7 @@ ${id_produto}               BeeJh5lz3k6kSIzA
 ${id_produto_inv}           Inv4l1dT0k3nHce0
 ${id_produto_editavel}      538YR5V9UQeiczEk
 
-${id_carrinho_fixo}     qbMqntef4iTOwWfg
+${id_carrinho_fixo}         qbMqntef4iTOwWfg
 
 ${email_para_login}         fulano@qa.com
 ${password_para_login}      teste
