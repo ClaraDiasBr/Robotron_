@@ -1,7 +1,7 @@
-# Challenge Sprint 6 - COMPASS.UOL
+# Challenge Sprint 6 
 
 # API ServeRest: Testes Automatizados com Robot Framework
-Repositório com o projeto final da trilha de automação com Robot Framework da COMPASS.UOL
+Repositório com o projeto final da trilha de automação com Robot Framework
 
 
 [![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-blue)](https://github.com/ServeRest/ServeRest/)
